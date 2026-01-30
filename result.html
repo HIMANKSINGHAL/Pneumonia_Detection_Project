@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Prediction Result</h1>
+
+    <img src="{{ image_path }}" class="preview-img">
+
+    <div class="result {{ 'pneumonia' if result == 'PNEUMONIA DETECTED' else 'normal' }}">
+        {{ result }}
+    </div>
+
+    <div class="confidence">
+        Confidence: {{ confidence }}%
+    </div>
+
+    <a href="/" class="back-link">🔄 Try another image</a>
+</div>
+
+</body>
+</html>
